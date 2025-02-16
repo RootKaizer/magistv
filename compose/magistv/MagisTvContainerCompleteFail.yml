@@ -1,0 +1,19 @@
+version: '2.33'
+
+services:
+  magis-video:
+    image: rottdocker/personal:magis-video
+    container_name: magis-tv
+    restart: unless-stopped
+    #environment:
+    #  - DISPLAY=${DISPLAY}
+    #volumes:
+    #  - /tmp/.X11-unix:/tmp/.X11-unix:rw  # Permite el acceso a la pantalla de host
+    #  - /dev:/dev  # Permite acceso a los dispositivos
+    #  - /home/magistv/waydroid:/home/magistv/waydroid  # Monta el directorio de trabajo
+    #ports:
+    #  - "5900:5900"  # Puedes redirigir puertos si es necesario
+    #privileged: true  # Otorga privilegios adicionales al contenedor para ejecutar Waydroid
+    #user: "magistv"  # Asegura que el contenedor se ejecute como el usuario 'magistv'
+    #network_mode: host  # Para usar la red del host (opcional)
+    #command: ["/usr/bin/supervisord", "-c", "/etc/supervisor/supervisord.conf"]  # Inicia el servicio con supervisord

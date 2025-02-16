@@ -1,0 +1,12 @@
+services:
+  magis-video:
+    privileged: true
+    image: rottdocker/personal:magis-video
+    container_name: magis-tv
+    restart: unless-stopped
+    environment:
+      - DISPLAY=${DISPLAY}  # Pasa la variable DISPLAY del host al contenedor
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw  # Monta el socket del servidor X
+      - $HOME/.Xauthority:/root/.Xauthority:rw  # Opcional: para mayor seguridad con xauth
+    command: ["/bin/bash", "-c", "tail -f /dev/null"]
