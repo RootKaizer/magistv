@@ -22,6 +22,14 @@ fi
 # Iniciar  contenedor magis-tv
 docker-compose -f $COMPOSE_FILE up -d
 
+
+# validar servicios arriba
+sleep 5
+echo "------------------------------------------------------------"
+echo "validar servicios arriba"
+echo "------------------------------------------------------------"
 docker ps -a
+
+
 # Log de arranque
-docker logs -f magis-tv
+#docker logs -f magis-tv

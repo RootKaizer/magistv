@@ -9,4 +9,9 @@ services:
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw  # Monta el socket del servidor X
       - $HOME/.Xauthority:/root/.Xauthority:rw  # Opcional: para mayor seguridad con xauth
-    command: ["/bin/bash", "-c", "tail -f /dev/null"]
+      - /lib/modules:/lib/modules:ro 
+    ports:
+      - "5555:5555"
+      - "5037:5037"
+    #command: ["/bin/bash", "-c", "tail -f /dev/null"]
+    command: ["/usr/local/bin/start-anbox.sh"]

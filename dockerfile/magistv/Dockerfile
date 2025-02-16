@@ -26,15 +26,13 @@ RUN apt update \
 
 # Configurar Anbox
 COPY andbox/android.img /var/lib/anbox/android.img
-#RUN mount -t binder binder /dev/binderfs \
-#    && echo "binder" >> /etc/modules
 
 # Copiar scripts de inicio (opcional)
-#COPY andbox/start-anbox.sh /usr/local/bin/start-anbox.sh
-#RUN chmod +x /usr/local/bin/start-anbox.sh
+COPY andbox/start-anbox.sh /usr/local/bin/start-anbox.sh
+RUN chmod +x /usr/local/bin/start-anbox.sh
 
 # Exponer el puerto ADB (opcional)
-#EXPOSE 5555
+EXPOSE 5555
 
 # Comando por defecto
 #CMD ["/usr/local/bin/start-anbox.sh"]
